@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+h1 {
+    padding: 0 10px;
+}
+
+li {
+    padding: 10px;
+    cursor: pointer;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+li:last-child {
+    border-bottom: 1px solid #ccc;
+}
+
+li:hover {
+    font-weight: bold;
+}
+
+button {
+    background: none;
+    border: none;
+    margin: 0 10px 0 0;
+    padding: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.Suspense {
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    overflow: scroll;
+}
+
+.Amiibo {
+    display: flex;
+    align-items: center;
+ }
+
+.Amiibo img {
+    height: 100px;
+    margin-right: 15px;
+}

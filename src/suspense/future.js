@@ -1,4 +1,4 @@
-import React, { Timeout, Component } from 'react';
+import React, { Timeout, Component, Loading } from 'react';
 import { unstable_deferredUpdates } from 'react-dom';
 import { createCache, createResource } from 'simple-cache-provider';
 
@@ -24,6 +24,8 @@ export function Placeholder({ delayMs, fallback, children }) {
         </Timeout>
     );
 }
+
+export { Loading };
 
 Component.prototype.deferSetState = function (partialState) {
     // unstable_deferredUpdates not working in event handlers issue workaround
