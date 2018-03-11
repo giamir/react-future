@@ -1,6 +1,8 @@
 # React Future
 The only purpose of this project is to showcase future features of React.
 
+You can try the app here: https://react-future.herokuapp.com
+
 ### Disclaimer
 Please don’t use React alphas in production! They have bugs, missing documentation, and unstable APIs.
 
