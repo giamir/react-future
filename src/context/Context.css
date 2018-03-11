@@ -1,0 +1,14 @@
+.Context {
+    padding: 0 10px;
+}
+
+.Context button {
+    font-family: 'Open Sans', sans-serif;
+    background: black;
+    color: white;
+    width: 130px;
+    padding: 5px 0;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}

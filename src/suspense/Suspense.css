@@ -1,17 +1,8 @@
-body {
-    margin: 0;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-h1 {
+.Suspense h1 {
     padding: 0 10px;
 }
 
-li {
+.Suspense li {
     padding: 10px;
     cursor: pointer;
     border-top: 1px solid #ccc;
@@ -21,35 +12,30 @@ li {
     font-size: 20px;
 }
 
-li:last-child {
+.Suspense li:last-child {
     border-bottom: 1px solid #ccc;
 }
 
-li:hover {
+.Suspense li:hover {
     font-weight: bold;
 }
 
-button {
-    background: none;
-    border: none;
+.Suspense button {
     margin: 0 10px 0 0;
-    padding: 0;
     font-size: 30px;
-    cursor: pointer;
 }
 
 .Suspense {
     height: 100vh;
-    font-family: 'Open Sans', sans-serif;
     overflow: scroll;
 }
 
-.Amiibo {
+.Suspense .Amiibo {
     display: flex;
     align-items: center;
  }
 
-.Amiibo img {
+.Suspense .Amiibo img {
     height: 100px;
     margin-right: 15px;
 }

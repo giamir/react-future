@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+nav {
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+nav h1 {
+    margin: 0 0 10px;
+}
+
+nav button {
+    font-family: 'Open Sans', sans-serif;
+    background: black;
+    color: white;
+    width: 130px;
+    padding: 5px 0;
+    margin: 0 10px 5px 0;
+}
+
+nav button.active {
+    font-weight: bold;
+}
+
+main h2 {
+    padding-left: 10px;
+}
