@@ -25,7 +25,7 @@ $ yarn && yarn start
 ### Suspense ✅
 A generic way for components to suspend rendering while they load asynchronous data.
 
-### Time Slicing ⚠️ (wip)
+### Time Slicing ✅
 A generic way to ensure that high-priority updates like user input don’t get blocked by rendering low-priority updates.
 
 ### New context API ✅

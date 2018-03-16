@@ -27,11 +27,11 @@ export function Placeholder({ delayMs, fallback, children }) {
 
 export { Loading };
 
-Component.prototype.deferSetState = function (partialState) {
+Component.prototype.deferSetState = function (partialState, callback) {
     // unstable_deferredUpdates not working in event handlers issue workaround
     // https://twitter.com/dan_abramov/status/971090711893377026
     Promise.resolve(() => unstable_deferredUpdates(() => {
-        this.setState(partialState);
+        this.setState(() => ({ ...partialState }), callback);
         }))
         .then(deferredUpdates => deferredUpdates());
 };
