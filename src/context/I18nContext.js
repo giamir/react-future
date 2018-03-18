@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const I18nContext = React.createContext('i18n');
+const I18nContext = React.createContext();
 
 export class I18nProvider extends Component {
     constructor(props) {
