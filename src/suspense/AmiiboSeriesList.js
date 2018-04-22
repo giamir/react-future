@@ -1,19 +1,24 @@
 import React from 'react';
 import { createFetcher } from './future';
 
-import { fetchAmiiboSeries } from './api';
-import AmiiboSerie from './AmiiboSerie';
+import { fetchAllAmiiboSeries } from './api';
+import Spinner from './Spinner';
 
-const amiiboSeriesFetcher = createFetcher(fetchAmiiboSeries);
+const allAmiiboSeriesFetcher = createFetcher(fetchAllAmiiboSeries);
 
-export default function AmiiboSeriesList({ onAmiiboSerieClick, loadingId }) {
-    const series = amiiboSeriesFetcher.read('amiiboSeries');
-    const listItems = series.amiibo.map(serie =>
-        <AmiiboSerie key={serie.key}
-                     serie={serie}
-                     onAmiiboSerieClick={onAmiiboSerieClick}
-                     isLoading={serie.key === loadingId} />
+export default function AmiiboSeriesList({ onSeriesClick, loadingId }) {
+    const allAmiiboSeries = allAmiiboSeriesFetcher.read('allAmiiboSeries');
+
+    return (
+        <ul>
+            {allAmiiboSeries.map(
+                series => (
+                    <li key={series.key} onClick={() => onSeriesClick(series)}>
+                        {series.name}
+                        {series.key === loadingId && <Spinner size="small" />}
+                    </li>
+                )
+            )}
+        </ul>
     );
-
-    return <ul>{listItems}</ul>;
 }

@@ -10,5 +10,5 @@ const imageFetcher = createFetcher(
 );
 
 export default function Img(props) {
-    return <img src={imageFetcher.read(props.src)} alt={props.alt} {...props} />;
+    return <img {...props} src={imageFetcher.read(props.src)} alt={props.alt} />;
 }

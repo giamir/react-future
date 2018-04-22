@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "16.4.0-alpha.0911da3",
     "react-dom": "16.4.0-alpha.0911da3",
-    "react-scripts": "1.1.1",
+    "react-scripts": "2.0.0-next.b2fd8db8",
     "simple-cache-provider": "0.3.0-alpha.0911da3",
     "victory": "0.25.6"
   },
@@ -14,5 +14,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "development": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 edge versions"
+    ],
+    "production": [
+      ">1%",
+      "last 4 versions",
+      "Firefox ESR",
+      "not ie < 11"
+    ]
   }
 }

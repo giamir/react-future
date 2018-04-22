@@ -1,79 +1,79 @@
-import React, { PureComponent, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import { Placeholder, Loading } from './future';
 
-import Spinner from './Spinner';
-import AmiiboSerieList from './AmiiboSerieList';
 import AmiiboSeriesList from './AmiiboSeriesList';
+import AmiibosList from './AmiibosList';
+
+import Spinner from './Spinner';
 
 import './Suspense.css';
 
 export default class Suspense extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            amiiboSerie: null,
-            showAmiiboSerie: false
-        };
-        this.handleAmiiboSerieClick = this.handleAmiiboSerieClick.bind(this);
-        this.handleBackClick = this.handleBackClick.bind(this);
-    }
+    state = {
+        selectedSeries: null,
+        showSelectedSeries: false
+    };
 
-    handleAmiiboSerieClick(amiiboSerie) {
+    handleSeriesClick = series => {
         this.setState({
-            amiiboSerie: amiiboSerie
+            selectedSeries: series
         });
         this.deferSetState({
-            showAmiiboSerie: true
+            showSelectedSeries: true
         });
-    }
+    };
 
-    handleBackClick() {
+    handleBackClick = () => {
         this.setState({
-            amiiboSerie: null,
-            showAmiiboSerie: false
+            selectedSeries: null,
+            showSelectedSeries: false
         });
-    }
+    };
 
-    renderAmiiboSeriesList(loadingId) {
+    renderAllAmiiboSeries(loadingId) {
         return (
-            <Fragment>
+            <>
                 <h1>All Amiibo series</h1>
                 <Placeholder
                     delayMs={1500}
                     fallback={<Spinner size="large" />}
                 >
                     <AmiiboSeriesList
-                        onAmiiboSerieClick={this.handleAmiiboSerieClick}
-                        loadingId={loadingId} />
+                        onSeriesClick={this.handleSeriesClick}
+                        loadingId={loadingId}
+                    />
                 </Placeholder>
-            </Fragment>
+            </>
         );
     }
 
-    renderAmiiboSerieList() {
-        const { amiiboSerie } = this.state;
-
+    renderAmiibosBySeries(selectedSeries) {
         return (
-            <Fragment>
+            <>
                 <h1>
                     <button onClick={this.handleBackClick}>←</button>
-                    {amiiboSerie.name}
+                    {selectedSeries.name}
                 </h1>
-                <AmiiboSerieList amiiboSerie={amiiboSerie} />
-            </Fragment>
+                <Placeholder
+                    delayMs={5000}
+                    fallback={<Spinner size="large" />}
+                >
+                    <AmiibosList selectedSeriesKey={selectedSeries.key} />
+                </Placeholder>
+            </>
         );
     }
 
     render() {
-        const { showAmiiboSerie, amiiboSerie } = this.state;
+        const { showSelectedSeries, selectedSeries } = this.state;
 
         return (
             <div className="Suspense">
                 <Loading>
-                    {isLoading => showAmiiboSerie
-                        ? this.renderAmiiboSerieList()
-                        : this.renderAmiiboSeriesList(
-                            isLoading ? amiiboSerie.key : null
+                    {isLoading => showSelectedSeries
+                        ? this.renderAmiibosBySeries(selectedSeries)
+                        : this.renderAllAmiiboSeries(
+                            isLoading ? selectedSeries.key : null
                         )
                     }
                 </Loading>
@@ -81,5 +81,3 @@ export default class Suspense extends PureComponent {
         );
     }
 }
-
-

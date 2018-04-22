@@ -30,3 +30,6 @@ A generic way to ensure that high-priority updates like user input don’t get b
 
 ### New context API ✅
 A new version of context that provides a mechanism for a child component (Consumer) to access a value in an ancestor component (Provider).
+
+### Error Boundaries  ✅
+Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the crashed component tree.

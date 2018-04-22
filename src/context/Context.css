@@ -11,4 +11,19 @@
     position: fixed;
     right: 0;
     bottom: 0;
+    z-index: 9999;
+}
+
+.Context .NestedComponent {
+    border: 1px solid black;
+    padding: 25px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.Context .NestedComponent > p {
+    position: absolute;
+    margin: -25px 0 0;
+    left: 0;
+    top: 0;
 }

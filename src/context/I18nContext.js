@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const I18nContext = React.createContext();
 
-export class I18nProvider extends Component {
+class I18nProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,4 +29,4 @@ export class I18nProvider extends Component {
 
 const I18nConsumer = I18nContext.Consumer;
 
-export { I18nConsumer };
+export { I18nProvider, I18nConsumer };
